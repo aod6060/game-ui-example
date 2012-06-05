@@ -40,23 +40,25 @@ namespace UI {
 		void setPos(float x, float y);
 		
 		void setVisable(bool vis);
+		
+		bool isVisable();
 	};
 	
 	class Container : public Component {
 	protected:
-		std::vector<Comp*> _comps;
+		std::vector<Component*> _comps;
 	public:
 	
 		virtual void release();
 		
-		virtual void addComponent(Comp* comp);
+		virtual void addComponent(Component* comp);
 	};
 	
 	class Manager {
-		Comp* _root;
+		Component* _root;
 	public:
 
-		void setRoot(Comp* comp);
+		void setRoot(Component* comp);
 		
 		void render();
 		
